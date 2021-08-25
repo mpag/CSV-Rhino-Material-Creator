@@ -76,9 +76,10 @@ with open(file_to_open, mode='r') as csv_file:
                 matBumpPath.append(row[10])
             
         line_count += 1
+    print "Complete"
 
 for count, i in enumerate(matName):
-    AddMaterial(i, matCol[count], matDiffPath[count])
+    AddMaterial(i, matCol[count], matDiffPath[count], matBumpPath[count])
 
 #Path Checking Routines
 #pathTest = os.path.normpath(matDiffPath[0])
