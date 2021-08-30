@@ -5,11 +5,12 @@ import System.Drawing
 import csv
 import os
 
-file_to_open = "F:/CDG/01_Templates/Rhino/Admin/RevitMaterialLibrary/RevitMaterialAudit.csv"
+file_to_open = "F:\CDG\01_Templates\Rhino\Admin\RevitMaterialLibrary\CSV-Rhino-Material-Creator\RevitMaterialAudit_Test.csv"
 matName = []
 matCol = []
 matDiffPath = []
 matBumpPath = []
+matAlphaPath = []
 
 def AddMaterial(name, colour, diffPath, bumpPath):
     #Create the Material, sub this out for CSV read
@@ -33,16 +34,18 @@ def AddMaterial(name, colour, diffPath, bumpPath):
     render_material = Rhino.Render.RenderMaterial.CreateBasicMaterial(rhino_material, scriptcontext.doc)
     scriptcontext.doc.RenderMaterials.Add(render_material);
     
-    #Create object to apply to
-#    sphere = Rhino.Geometry.Sphere(Rhino.Geometry.Plane.WorldXY, 10000)
-#    id = scriptcontext.doc.Objects.AddSphere(sphere);
-#    obj = scriptcontext.doc.Objects.FindId(id);
-#    if obj is not None:
-#        obj.RenderMaterial = render_material;
-#        obj.CommitChanges();
-    
+    #Return result
     scriptcontext.doc.Views.Redraw();
     return Rhino.Commands.Result.Success;
+
+def pathSplitter(path):
+    if path is None:
+        mattDiffPath.append("")
+    else:
+        a = path.split('$')
+        if len(a) = 3:
+            mattBumpPath.append(a[0])
+            matt
 
 with open(file_to_open, mode='r') as csv_file:
     csv_reader = csv.reader(csv_file, delimiter=',')
