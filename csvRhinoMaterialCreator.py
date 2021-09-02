@@ -5,25 +5,41 @@ import System.Drawing
 import csv
 import os
 
-file_to_open = "F:\CDG\01_Templates\Rhino\Admin\RevitMaterialLibrary\CSV-Rhino-Material-Creator\RevitMaterialAudit_Test.csv"
+file_to_open = "F:/CDG/01_Templates/Rhino/Admin/RevitMaterialLibrary/RevitMaterialAudit_MP.csv"
 matName = []
 matCol = []
 matDiffPath = []
+matTransPath = []
 matBumpPath = []
-matAlphaPath = []
 
-def AddMaterial(name, colour, diffPath, bumpPath):
+
+def AddMaterial(name, colour, diffPath, transPath, bumpPath):
     #Create the Material, sub this out for CSV read
     rhino_material = Rhino.DocObjects.Material();
     rhino_material.Name = name;
-    rhino_material.DiffuseColor = System.Drawing.Color.FromArgb(colour[3], colour[0], colour[1], colour[2]);
+    rhino_material.DiffuseColor = System.Drawing.Color.FromArgb(1, colour[0], colour[1], colour[2]);
     rhino_material.SpecularColor = System.Drawing.Color.WhiteSmoke;
     
     #diff texture
     texture = Rhino.DocObjects.Texture();
     texture.FileName = diffPath
-    #texture.FileName = "F:/CDG/01_Templates/Rhino/Material Collation/Library/Textures/TexturesCom_Cobblestone2_Pink.jpg"
     rhino_material.SetTexture(texture, Rhino.DocObjects.TextureType.Bitmap)
+    
+    #gloss texture
+#    glossTexture = Rhino.DocObjects.Texture();
+#    texture.FileName = glossPath
+#    rhino_material.SetBumpTexture(texture)
+#    rhino_material.
+    
+    #trans texture
+    transTexture = Rhino.DocObjects.Texture();
+    texture.FileName = transPath
+    rhino_material.SetTransparencyTexture(texture)
+    
+    #alpha texture
+#    bumpTexture = Rhino.DocObjects.Texture();
+#    texture.FileName = bumpPath
+#    rhino_material.SetBumpTexture(texture)
     
     #bump texture
     bumpTexture = Rhino.DocObjects.Texture();
@@ -38,14 +54,13 @@ def AddMaterial(name, colour, diffPath, bumpPath):
     scriptcontext.doc.Views.Redraw();
     return Rhino.Commands.Result.Success;
 
+
 def pathSplitter(path):
     if path is None:
         mattDiffPath.append("")
     else:
-        a = path.split('$')
-        if len(a) = 3:
-            mattBumpPath.append(a[0])
-            matt
+        mattBumpPath.append(path)
+
 
 with open(file_to_open, mode='r') as csv_file:
     csv_reader = csv.reader(csv_file, delimiter=',')
@@ -54,35 +69,45 @@ with open(file_to_open, mode='r') as csv_file:
         if line_count > 1:
             
             #Attribute Name String
-            matName.append("Revit_" + row[0])
+            if matName is not None:
+                matName.append("Revit_" + row[0])
+            else:
+                matName.append("None")
             
             #Split Shading Colour String
-            cols = row[1].split(',')
-            colsRGB = []
-            for i in cols:
-                a = i.split('= ')
-                cols2 = a[1]
-                cols3 = cols2.split(')')
-                colsRGB.append(int(cols3[0]))
-            matCol.append(colsRGB)
+            if (row[1] != '') :
+                cols = row[1].split('/')
+                colsRGB = []
+                for i in cols:
+                    colsRGB.append(int(i))
+                matCol.append(colsRGB)
+                print (colsRGB)
             
             #Append Diff Path
-            if row[10] is None:
+            if row[2] is None:
                 matDiffPath.append("")
             else :
-                matDiffPath.append(row[10])
+                matDiffPath.append(row[2])
+            
+            #Append Trans Path
+            if row[5] is None:
+                matTransPath.append("")
+            else :
+                matTransPath.append(row[5])
             
             #Append Bump Path
-            if row[10] is None:
+            if row[6] is None:
                 matBumpPath.append("")
             else :
-                matBumpPath.append(row[10])
+                matBumpPath.append(row[6])
             
         line_count += 1
-    print "Complete"
+#    print (line_count)
+#    print "Complete"
 
 for count, i in enumerate(matName):
-    AddMaterial(i, matCol[count], matDiffPath[count], matBumpPath[count])
+    print (count, i)
+    AddMaterial(i, matCol[count], matDiffPath[count], matTransPath[count], matBumpPath[count])
 
 #Path Checking Routines
 #pathTest = os.path.normpath(matDiffPath[0])
