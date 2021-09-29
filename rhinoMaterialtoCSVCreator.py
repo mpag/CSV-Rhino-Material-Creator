@@ -6,6 +6,7 @@ import csv
 import os
 
 file_to_open = "F:/CDG/01_Templates/Rhino/Admin/RevitMaterialLibrary/RevitMaterialAudit_MP.csv"
+
 matName = []
 matCol = []
 matDiffPath = []
@@ -23,19 +24,31 @@ for material in mats:
     matCol.append(matDiffCol)
     
     matTexBitmap = Rhino.DocObjects.Material.GetBitmapTexture(material)
-    matTexBitmapPath = Rhino.DocObjects.Texture.FileName.GetValue(matTexBitmap)
-    matDiffPath.append(matTexBitmapPath)
+    if matTexBitmap is None:
+        matDiffPath.append("None")
+    else:
+        matTexBitmapPath = Rhino.DocObjects.Texture.FileName.GetValue(matTexBitmap)
+        pathTest = os.path.normpath(matTexBitmapPath)
+#        print (str(pathTest))
+        matDiffPath.append(matTexBitmapPath)
     
     matTexBump = Rhino.DocObjects.Material.GetBumpTexture(material)
-    matTexBumpPath = Rhino.DocObjects.Texture.FileName.GetValue(matTexBump)
-    matBumpPath.append(matTexBumpPath)
+    if matTexBump is None:
+        matBumpPath.append("None")
+    else:
+        matTexBumpPath = Rhino.DocObjects.Texture.FileName.GetValue(matTexBump)
+        matBumpPath.append(matTexBumpPath)
     
     matTexTrans = Rhino.DocObjects.Material.GetTransparencyTexture(material)
-    matTexTransPath = Rhino.DocObjects.Texture.FileName.GetValue(matTexTrans)    
-    matTransPath.append(matTexTransPath)
-    
-    
-print (matName[0], matCol[0], matDiffPath[0], matTransPath[0], matBumpPath[0])
+    if matTexTrans is None:
+        matTransPath.append("None")
+    else:
+        matTexTransPath = Rhino.DocObjects.Texture.FileName.GetValue(matTexTrans)
+        matTransPath.append(matTexTransPath)
+
+
+for i, j in enumerate(matName):
+    print (matName[i], matCol[i], matDiffPath[i], matBumpPath[i], matTransPath[i])
 
 
 
