@@ -1,14 +1,19 @@
 Name,Colour,DiffuseMapPath,BumpMapPath,TransparencyMapPath
-,Color [White],None,None,None
-,"Color [A=255, R=63, G=218, B=223]",None,None,None
-,"Color [A=255, R=178, G=178, B=178]",None,None,None
-,"Color [A=255, R=224, G=245, B=50]",None,None,None
-,"Color [A=255, R=63, G=218, B=223]",None,None,None
-Shortlist_Wood_Plywood Birch_1000x1000,"Color [A=255, R=250, G=250, B=250]",F:\CDG\01_Templates\Rhino\Material Collation\Library\Textures\New folder\Birch_Veneer_Color_A.png,F:\CDG\01_Templates\Rhino\Material Collation\Library\Textures\New folder\Birch_Veneer_Color_A.png,None
-Shortlist_Brick_Light_2500x2500,"Color [A=255, R=250, G=250, B=250]",\\bvn\data\MaterialsLibrary\Rhino\BVN Material Shortlist\Textures\1545389235Background-wall-large-texture--WALLPAPER - colour.jpg,\\bvn\data\MaterialsLibrary\Rhino\BVN Material Shortlist\Textures\1545389235Background-wall-large-texture--WALLPAPER - bump.jpg,None
-Shortlist_Wood_Floor_5000x5000,Color [White],C:\Users\mpage\AppData\Roaming\McNeel\Rhinoceros\7.0\Localization\en-US\Render Content\Textures\Wood floor light_1000_DF.jpg,None,None
-Revit_BVN_Metal_Bronze_01,"Color [A=255, R=80, G=80, B=80]",\\bvn\data\MaterialsLibrary\Substance\Metal\metal_bronze_2000_d.jpg,\\bvn\data\MaterialsLibrary\Substance\Metal\metal_bronze_2000_b.jpg,None
-Revit_BVN_Concrete_Rough_02,"Color [A=255, R=80, G=80, B=80]",\\bvn\data\MaterialsLibrary\Substance\Concrete\concrete_rough-02_2000_d.jpg,\\bvn\data\MaterialsLibrary\Substance\Concrete\concrete_rough-02_2000_b.jpg,None
-Shortlist_Glass_Simple,Color [Black],None,None,None
-Revit_BVN_Carpet_Grey_Tiles_600x600,"Color [A=255, R=80, G=80, B=80]",\\bvn\data\MaterialsLibrary\Substance\Carpet\carpet_grey_600x600_1200_d.jpg,\\bvn\data\MaterialsLibrary\Substance\Carpet\carpet_grey_600x600_1200_b.jpg,None
-Revit_BVN_Concrete_Polished_01,"Color [A=255, R=80, G=80, B=80]",\\bvn\data\MaterialsLibrary\Substance\Concrete\concrete_polished_2000_d.jpg,\\bvn\data\MaterialsLibrary\Substance\Concrete\concrete_polished_2000_b.jpg,None
+Shortlist_Wood_Plywood Birch_1000x1000,"Color [A=255, R=250, G=250, B=250]",F:\CDG\01_Templates\Rhino\Material Collation\Library\Textures\New folder\Birch_Veneer_Color_A.png,F:\CDG\01_Templates\Rhino\Material Collation\Library\Textures\New folder\Birch_Veneer_Color_A.png,
+Shortlist_Brick_Light_2500x2500,"Color [A=255, R=250, G=250, B=250]",\\bvn\data\MaterialsLibrary\Rhino\BVN Material Shortlist\Textures\1545389235Background-wall-large-texture--WALLPAPER - colour.jpg,\\bvn\data\MaterialsLibrary\Rhino\BVN Material Shortlist\Textures\1545389235Background-wall-large-texture--WALLPAPER - bump.jpg,
+Shortlist_Wood_Floor_5000x5000,Color [White],C:\Users\mpage\AppData\Roaming\McNeel\Rhinoceros\7.0\Localization\en-US\Render Content\Textures\Wood floor light_1000_DF.jpg,,
+Revit_BVN_Metal_Bronze_01,"Color [A=255, R=80, G=80, B=80]",\\bvn\data\MaterialsLibrary\Substance\Metal\metal_bronze_2000_d.jpg,\\bvn\data\MaterialsLibrary\Substance\Metal\metal_bronze_2000_b.jpg,
+Revit_BVN_Concrete_Rough_02,"Color [A=255, R=80, G=80, B=80]",\\bvn\data\MaterialsLibrary\Substance\Concrete\concrete_rough-02_2000_d.jpg,\\bvn\data\MaterialsLibrary\Substance\Concrete\concrete_rough-02_2000_b.jpg,
+Shortlist_Glass_Simple,Color [Black],,,
+Revit_BVN_Carpet_Grey_Tiles_600x600,"Color [A=255, R=80, G=80, B=80]",\\bvn\data\MaterialsLibrary\Substance\Carpet\carpet_grey_600x600_1200_d.jpg,\\bvn\data\MaterialsLibrary\Substance\Carpet\carpet_grey_600x600_1200_b.jpg,
+Revit_BVN_Concrete_Polished_01,"Color [A=255, R=80, G=80, B=80]",\\bvn\data\MaterialsLibrary\Substance\Concrete\concrete_polished_2000_d.jpg,\\bvn\data\MaterialsLibrary\Substance\Concrete\concrete_polished_2000_b.jpg,
+_!BVN Logo,Color [White],R:\BRAND & COMMS\05_SPECIAL PROJECTS\5.Brand Evolution\01_Brand identity\03_Design Development\Logos\PNG\BVN_InterimLogos_BLK_210706.png,,
+_!Default Black,Color [Black],,,
+_!Default Grey,"Color [A=255, R=178, G=178, B=178]",,,
+_!Default White,Color [White],,,
+_BVN Colour Blue,"Color [A=255, R=63, G=218, B=223]",,,
+_BVN Colour Green,"Color [A=255, R=224, G=245, B=50]",,,
+_BVN Colour Orange,"Color [A=255, R=255, G=166, B=0]",,,
+_BVN Colour Purple,"Color [A=255, R=109, G=103, B=189]",,,
+_BVN Colour Red,"Color [A=255, R=150, G=19, B=27]",,,
+_BVN Colour Yellow,"Color [A=255, R=255, G=233, B=20]",,,
