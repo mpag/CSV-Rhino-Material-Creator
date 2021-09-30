@@ -5,7 +5,7 @@ import System.Drawing
 import csv
 import os
 
-file_to_open = "F:/CDG/01_Templates/Rhino/Admin/RevitMaterialLibrary/RevitMaterialAudit_MP.csv"
+file_to_open = "F:\CDG\01_Templates\Rhino\Admin\RevitMaterialLibrary\CSV-Rhino-Material-Creator\RevitMaterialAudit_MP.csv"
 matName = []
 matCol = []
 matDiffPath = []
